@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>구구단 8,9단 구현</h2>
+    출력할 단수: <input type="text" id="num"><br>
+    <button onclick="runGugudan()">확인</button>
+
+    <script>        
+        function runGugudan(){
+            var strN = document.getElementById("num").value;
+            var n = Number(strN);
+            
+            if ( (n < 2) || (n > 9)){
+                document.write('2~9단 사이를 입력해 주세요.');
+            } else {
+                for (var i = 1; i < 10; i++){
+                    document.write(n + ' * ' + i + ' = ' + n * i);
+                    document.write('<br>');
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>

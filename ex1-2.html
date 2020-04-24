@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+</head>
+<body>
+    <h2>BMI 계산</h2>
+    <script>
+        var s1 = prompt("몸무게를 입력해 주세요.");
+        var n1 = Number(s1);
+        var s2 = prompt("신장을 입력해 주세요.");
+        var n2 = Number(s2)/100;
+
+        var bmi = n1 / (n2 * n2);
+
+        console.log("BMI 지수는 " + bmi + "입니다.");
+        if (bmi <= 18.5){
+            console.log("저체중입니다.");            
+        }else if(bmi > 18.5 && bmi <=23){
+            console.log("정상입니다.");
+        }else if(bmi > 23 && bmi <=25){
+            console.log("과체중입니다.");
+        }else if(bmi > 25 && bmi <=30){
+            console.log("비만입니다.");
+        }else{
+            console.log("고도비만입니다.");
+        }
+    </script>
+</body>
+</html>

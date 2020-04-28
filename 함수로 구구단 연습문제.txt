@@ -1,0 +1,18 @@
+구구단 계산 결과를 배열에 담는 로직을 새로운 함수로 분리한다.
+배열에 담은 데이터를 화면에 출력하는 로직을 새로운 함수로 분리한다.
+
+function calculrate(num) {
+    var results = [];
+    for (var i = 1; i < results.length; i++) {
+    // 계산 결과를 배열에 저장
+    }
+    return results
+}
+
+function print(results) {
+    // 계산 결과를 화면에 출력
+}
+function main() {
+    // 나머지 코드들은 여기에 
+}
+main();

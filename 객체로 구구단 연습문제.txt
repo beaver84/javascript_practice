@@ -1,0 +1,6 @@
+gugudan = {}
+gugudan.calculate = function {
+    // ...
+}
+
+functin main()

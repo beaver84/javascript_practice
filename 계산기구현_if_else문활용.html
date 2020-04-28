@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id ="n1" /><br/>
+    <input type="text" id ="op" /><br/>
+    <input type="text" id ="n2" /><br/>
+    <input type="button" onclick="calc()" value="계산"></button><br/>
+    <div id="output"></div>
+    
+
+    <script>
+        function calc(){
+            var str1 = document.getElementById('n1').value;
+            var str2 = document.getElementById('n2').value;
+            var op = document.getElementById('op').value;
+            var n1 = Number(str1);
+            var n2 = Number(str2);
+
+            var out = document.getElementById('output');
+            var str = "";
+            if ( op === "+"){
+                str += "더하기: " + (n1 + n2) + "<br>"; 
+            }else if (op === "-"){
+                str += "빼기: " + (n1 - n2) + "<br>";
+            }else if (op === "*"){
+                str += "곱하기: " + (n1 * n2) + "<br>";                
+            }else if (op === "/"){
+                str += "나누기: " + (n1 / n2) + "<br>";
+            }else{
+                str += "연산자에는 4칙연산자만 입력해 주세요.";
+            }
+            out.innerHTML = str;
+        }
+        
+    </script>
+</body>
+</html>

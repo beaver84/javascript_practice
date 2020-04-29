@@ -1,10 +1,28 @@
-var clickNumbers = function(event){
-    console.log("click numbers");
-    console.log(event.target.innerHTML);
+var input= {'array': []};
+
+input.getInput = function() {
+    return this.array.join("");    
 }
 
-var clickOthers = function(event){
-    console.log("click others");
+var output = {};
+output.text = document.getElementById('output');
+
+var clickNumbers = function(event){    
+    var str = event.target.innerHTML;    
+    console.log(str);
+
+    if (str === 'BS') {
+        input.array.pop();
+    } else {
+        input.array.push(str);    
+    }
+
+    // console.log(input.getInput());
+    output.text.innerHTML = input.getInput();
+}
+
+var showResult = function(event){
+    console.log("click showResult");
     console.log(event.target.innerHTML);
 }
 // var = input = {};

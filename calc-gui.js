@@ -11,14 +11,32 @@ var clickNumbers = function(event){
     var str = event.target.innerHTML;    
     console.log(str);
 
-    if (str === 'BS') {
+    switch (str) {
+        case 'BS':
         input.array.pop();
-    } else {
-        input.array.push(str);    
-    }
-
+        break;
+        case '+':
+        input.array.push(' ' + str + ' ');
+        break;
+        case '-':
+        input.array.push(' ' + str + ' ');
+        break;
+        case '*':
+        input.array.push(' ' + str + ' ');
+        break;
+        case '/':
+        input.array.push(' ' + str + ' ');
+        break;
+        default:
+        input.array.push(str);
+    }    
     // console.log(input.getInput());
-    output.text.innerHTML = input.getInput();
+
+    if (input.array.length === 0){
+        output.text.innerHTML = input.getInput();
+    } else {
+        output.text.innerHTML = input.getInput();
+    }
 }
 
 var showResult = function(event){

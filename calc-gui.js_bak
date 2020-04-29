@@ -1,0 +1,124 @@
+//JS calculator
+//by ktbae
+//2020.04.29
+
+// input object
+// 입력을 담당하는 object
+var input= {
+    'array': []
+};
+
+input.getInput = function() {
+    return this.array.join("");    
+}
+
+input.removeAll = function(str){
+    this.array = [];
+};
+
+input.empty = function() {
+    return this.array.length === 0;
+};
+
+input.getValue = function() {
+    var str = this.array.shift();
+    var n = Number(str);
+    return n;
+};
+
+input.getOperator = function(){
+    var op = this.array.shift();
+    if (op === "+" || op === "-" || op === "*" || op === "/") {
+        return op;
+    } else {
+        return "$";
+    }
+};
+
+// output object
+// 출력을 담당한다.
+var output = {};
+output.text = document.getElementById('output');
+
+//calculator 객체
+//계산을 담당
+var calculator = {};
+calculator.calculate = function(first, second, op){
+    var ret;
+    switch(op){
+        case "+":
+        ret = first + second;
+        break;
+        case "-":
+        ret = first - second;
+        case "*":
+        ret = first * second;
+        break;
+        case "/":
+        ret = first / second;
+        break;
+        default:
+        return NaN;
+    }
+    return ret;
+}
+
+var clickNumbers = function(event){    
+    var str = event.target.innerHTML;    
+    console.log(str);
+
+    switch (str) {
+        case 'BS':
+        input.array.pop();
+        break;
+        case '+':        
+        case '-':        
+        case '*':        
+        case '/':
+        input.array.push(' ' + str + ' ');
+        break;
+        default:
+        input.array.push(str);
+    }    
+    // console.log(input.getInput());
+
+    if (input.array.length === 0){
+        output.text.innerHTML = input.getInput();
+    } else {
+        output.text.innerHTML = input.getInput();
+    }
+}
+
+var showResult = function(event){   
+    var result = input.getValue();
+    while (!input.empty()){
+        var op = input.getOperator();
+        var second = input.getValue();
+        result = calculator.calculate(result, second, op);
+    }
+    output.print(result);
+}
+// var = input = {};
+
+// input.init = function(str) {
+//     this.list = str.split(" ");
+// };
+
+// input.empty = function(){
+//     return this.list.length == 0;
+// };
+
+// input.getValue = function() {
+//     var str = this.list.shift();
+//     var n = Number(str);
+//     return n;
+// };
+
+// input.getOperator = function(){
+//     var op = this.list.shift();
+//     if (op === "+" || op === "-" || op === "*" || op === "/"){
+//         return op;
+//     } else {
+//         return "$";
+//     }
+// };
